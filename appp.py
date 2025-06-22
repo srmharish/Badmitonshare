@@ -6,7 +6,7 @@ import io
 
 # ----- App Setup -----
 st.set_page_config(
-    page_title="Player Share Calculator",
+    page_title="Share Calculator",
     page_icon="💸",
     layout="centered",
     initial_sidebar_state="collapsed"
@@ -51,7 +51,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ----- App Title -----
-st.title("💸 Player Share Calculator")
+st.title("💸 Share Calculator")
 
 # Upload Excel file
 uploaded_file = st.file_uploader("📤 Upload Excel File (Column A = Player Names)", type=["xlsx"])
@@ -76,12 +76,12 @@ if uploaded_file:
                 per_share = amount / len(selected_players)
 
                 # Draw image
-                height = 60 + 30 * len(selected_players)
+                height = 60 + 80 * len(selected_players)
                 img = Image.new("RGB", (600, height), "white")
                 draw = ImageDraw.Draw(img)
 
                 try:
-                    font = ImageFont.truetype("arial.ttf", 16)
+                    font = ImageFont.truetype("Calibri.ttf", 20)
                 except:
                     font = ImageFont.load_default()
 
@@ -110,7 +110,7 @@ if uploaded_file:
                 st.download_button(
                     label="📥 Download Result Image",
                     data=buffer,
-                    file_name=f"final_result_{timestamp}.jpg",
+                    file_name=f"Player Share_{timestamp}.jpg",
                     mime="image/jpeg"
                 )
 
