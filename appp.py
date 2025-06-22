@@ -4,8 +4,53 @@ from PIL import Image, ImageDraw, ImageFont
 from datetime import datetime
 import io
 
-st.set_page_config(page_title="Player Share Calculator", layout="centered")
+# ----- App Setup -----
+st.set_page_config(
+    page_title="Player Share Calculator",
+    page_icon="💸",
+    layout="centered",
+    initial_sidebar_state="collapsed"
+)
 
+# ----- Custom Styling -----
+st.markdown("""
+    <style>
+        .main {
+            background-color: #f5f5fa;
+        }
+        .block-container {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        h1 {
+            color: #333333;
+        }
+        .stButton>button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            padding: 10px 20px;
+        }
+        .stButton>button:hover {
+            background-color: #45a049;
+        }
+        .stDownloadButton>button {
+            background-color: #1E88E5;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            padding: 10px 20px;
+        }
+        .stTextInput>div>input, .stNumberInput>div>input {
+            background-color: #ffffff;
+            border-radius: 6px;
+            padding: 6px;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# ----- App Title -----
 st.title("💸 Player Share Calculator")
 
 # Upload Excel file
@@ -31,7 +76,7 @@ if uploaded_file:
                 per_share = amount / len(selected_players)
 
                 # Draw image
-                height = 60 + 80 * len(selected_players)
+                height = 60 + 30 * len(selected_players)
                 img = Image.new("RGB", (600, height), "white")
                 draw = ImageDraw.Draw(img)
 
