@@ -93,20 +93,20 @@ if uploaded_file:
             else:
                 # Draw image
                 height = 60 + 80 * len(player_shares)
-                img = Image.new("RGB", (600, height), "white")
+                img = Image.new("RGB", (600, height), "Grey")
                 draw = ImageDraw.Draw(img)
 
                 try:
-                    font = ImageFont.truetype("calibri.ttf", 25)
+                    font = ImageFont.truetype("calibri.ttf", 40)
                 except:
                     font = ImageFont.load_default()
 
                 y = 20
-                draw.text((20, y), f"Total Amount: ₹{amount:.2f}", fill="black", font=font)
+                draw.text((20, y), f"Total Amount: Rs. {amount:.2f}", fill="Blue", font=font)
                 y += 30
-                draw.text((20, y), f"Split Type: {'Manual' if manual_override else 'Equal'}", fill="black", font=font)
+                draw.text((20, y), f"Split Type: {'Manual' if manual_override else 'Equal'}", fill="Blue", font=font)
                 y += 30
-                draw.text((20, y), "Players and Shares:", fill="black", font=font)
+                draw.text((20, y), "Players and Shares:", fill="Blue", font=font)
                 y += 30
 
                 for i, (player, share) in enumerate(player_shares.items(), start=1):
@@ -125,7 +125,7 @@ if uploaded_file:
                 st.download_button(
                     label="📥 Download Result Image",
                     data=buffer,
-                    file_name=f"final_result_{timestamp}.jpg",
+                    file_name=f"PlayerShare_{timestamp}.jpg",
                     mime="image/jpeg"
                 )
 
