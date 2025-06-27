@@ -36,7 +36,7 @@ st.markdown("""
             background-color: #45a049;
         }
         .stDownloadButton>button {
-            background-color: #1E88E5;
+            background-color: #1ee571;
             color: white;
             font-weight: bold;
             border-radius: 8px;
