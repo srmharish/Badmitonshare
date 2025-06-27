@@ -120,7 +120,7 @@ if uploaded_file:
                 buffer.seek(0)
 
                 st.success("✅ Image created successfully!")
-                st.image(buffer, caption="Result Image Preview", use_column_width=True)
+                st.image(buffer, caption="Result Image Preview", use_container_width=True)
 
                 st.download_button(
                     label="📥 Download Result Image",
