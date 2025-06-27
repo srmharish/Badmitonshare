@@ -97,7 +97,7 @@ if uploaded_file:
                 draw = ImageDraw.Draw(img)
 
                 try:
-                    font = ImageFont.truetype("calibri.ttf", 40)
+                    font = ImageFont.truetype("comic.ttf", 40)
                 except:
                     font = ImageFont.load_default()
 
