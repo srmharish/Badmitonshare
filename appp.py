@@ -97,7 +97,7 @@ if uploaded_file:
                 draw = ImageDraw.Draw(img)
 
                 try:
-                    font = ImageFont.truetype("arial.ttf", 16)
+                    font = ImageFont.truetype("calibri.ttf", 25)
                 except:
                     font = ImageFont.load_default()
 
@@ -110,7 +110,7 @@ if uploaded_file:
                 y += 30
 
                 for i, (player, share) in enumerate(player_shares.items(), start=1):
-                    draw.text((40, y), f"{i}. {player}: ₹{share:.2f}", fill="black", font=font)
+                    draw.text((40, y), f"{i}. {player}: Rs. {share:.2f}", fill="Green", font=font)
                     y += 30
 
                 # Save to buffer
