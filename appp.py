@@ -93,7 +93,7 @@ if uploaded_file:
             else:
                 # Draw image
                 height = 60 + 80 * len(player_shares)
-                img = Image.new("RGB", (600, height), "Grey")
+                img = Image.new("RGB", (400, height), "White")
                 draw = ImageDraw.Draw(img)
 
                 try:
